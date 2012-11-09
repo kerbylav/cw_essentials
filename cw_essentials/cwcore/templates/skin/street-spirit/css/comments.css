@@ -1,0 +1,66 @@
+.comment.cw-answer-direct,  .comment.cw-answer-later{
+	background-color: #FFF0F0;
+	padding-bottom: 5px;
+}
+
+.comment.cw-answer-later {
+	background-color: #DEFFEF;
+	padding-bottom: 5px;
+}
+
+.comment.current.cw-answer-direct .content, .comment.current.cw-answer-direct .content:before {
+background: none;
+padding: 0;
+}
+
+.comment.current.cw-answer-later .content, .comment.current.cw-answer-later .content:before {
+background: none;
+padding: 0;
+}
+
+.comment.cw-answer-direct .info, .comment.cw-answer-later .info {
+	background-color: #CCDDEE;
+	padding-top:0px;
+	margin-top:10px;
+}
+
+.comment.cw-answer-direct.current .info, .comment.cw-answer-later.current .info {
+	background-color: #E2F5E1;
+}
+
+.comment.cw-answer-direct .voting, .comment.cw-answer-later .voting {
+	top: 4px;
+}
+
+.comments .cw-answer-later {
+}
+
+.comments .cw-action-wont-reply,.comments .cw-action-reply-later {
+	margin-left: 5px;
+	color: red;
+}
+
+.comments .cw-action-reply-later {
+	color: green;
+}
+
+.comments .cw-action-wont-reply,.comments .cw-action-reply-later {
+}
+
+.comments .cw-action-reply-later 
+{
+	color: green;
+}
+
+#update .direct_comments_counter, #update .later_comments_counter {
+	border-top: 1px solid #ECECED;
+	color: red;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 3px;
+	padding-top: 7px;
+}
+
+#update .later_comments_counter {
+	color: green;
+}

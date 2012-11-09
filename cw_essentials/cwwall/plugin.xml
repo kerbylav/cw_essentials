@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<name>
+		<lang name="default">Comment Watcher: The wall</lang>
+	</name>
+	<author>
+		<lang name="default">Alexei Lukin aka Kerby</lang>
+	</author>
+	<homepage>http://imthinker.ru</homepage>
+	<version>1.0.2</version>
+	<requires>
+		<livestreet>1.0.1</livestreet>
+		<plugins>
+		</plugins>
+	</requires>
+	<description>
+		<lang name="default">Watch for comments activity: The wall mod</lang>
+		<lang name="russian">Слежение за активностью комментов. Мод слежения за сообщениями на стенах пользователей</lang>
+	</description>
+</plugin>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<name>
+		<lang name="default">Comment Watcher: The Core</lang>
+	</name>
+	<author>
+		<lang name="default">Alexei Lukin aka Kerby</lang>
+	</author>
+	<homepage>http://imthinker.ru</homepage>
+	<version>1.0.3</version>
+	<requires>
+		<livestreet>0.5.1</livestreet>
+		<plugins>
+		</plugins>
+	</requires>
+	<description>
+		<lang name="default">Watch for comments activity: Core plugin</lang>
+		<lang name="russian">Слежение за активностью комментов. Ядро.</lang>
+	</description>
+</plugin>
