@@ -28,7 +28,7 @@ Config::Set('db.table.watcher_wall_watch', '___db.table.prefix___commentwatcher_
 if (version_compare(LS_VERSION, "0.5.1", '>'))
 {
 //    $wg['lswall']=array('title'=>'plugin.cwtalk.commentwatcher_panel_title_talk_direct', 'menu_title'=>'plugin.cwtalk.commentwatcher_menu_title_talk_direct', 'order'=>500);
-//    $wg['lswall_direct']=array('title'=>'plugin.cwtalk.commentwatcher_panel_title_talk_activity', 'menu_title'=>'plugin.cwtalk.commentwatcher_menu_title_talk_activity');
+//    $wg['lswall_direct']=array('title'=>'plugin.cwtalk.commentwatcher_panel_title_talk_activity', 'menu_title'=>'plugin.cwtalk.commentwatcher_menu_title_talk_activity', 'order'=>500);
 }
 else
 {

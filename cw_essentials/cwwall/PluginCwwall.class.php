@@ -22,31 +22,38 @@ if (!class_exists('Plugin'))
 
 class PluginCWWall extends PluginCWMod
 {
+
     protected $sModType='lswall';
-    
-    protected $aInherits=array('action'=>array('ActionProfile'),'module'=>array('ModuleWall'));
+
+    protected $aInherits=array('action'=>array('ActionProfile'), 'module'=>array('ModuleWall'));
 
     public function Activate()
     {
         if (parent::Activate())
         {
+            if (!$this->isTableExists('prefix_commentwatcher_watcher_wall_watch'))
+            {
+                /**
+			 * При активации выполняем SQL дамп
+			 */
+                $this->ExportSQL(dirname(__FILE__) . '/install.sql');
+            }
             $this->addEnumType(Config::Get('db.table.watcher_data'), 'comment_type', 'lswall');
             $this->addEnumType(Config::Get('db.table.watcher_data'), 'comment_type', 'lswall_direct');
-            //            $this->addEnumType(Config::Get('db.table.favourite'), 'target_type', 'cwlswall');
             return true;
         }
         else
             return false;
     }
-    
+
     /**
 	 * Инициализация плагина
 	 */
     public function Init()
     {
         parent::Init();
-        $this->Viewer_AppendStyle($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'css/wall.css'));
-        $this->Viewer_AppendScript($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'js/wall.js'));
+        $this->Viewer_AppendStyle($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'css/wall.css'));
+        $this->Viewer_AppendScript($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'js/wall.js'));
         
         return true;
     }

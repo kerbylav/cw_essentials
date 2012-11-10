@@ -26,12 +26,12 @@ $wg=Config::Get('plugin.cwcore.watch_groups');
 if (version_compare(LS_VERSION, "0.5.1", '>'))
 {
     $wg['talk_direct']=array('title'=>'plugin.cwtalk.commentwatcher_panel_title_talk_direct', 'menu_title'=>'plugin.cwtalk.commentwatcher_menu_title_talk_direct', 'order'=>500);
-    $wg['talk_activity']=array('title'=>'plugin.cwtalk.commentwatcher_panel_title_talk_activity', 'menu_title'=>'plugin.cwtalk.commentwatcher_menu_title_talk_activity');
+    $wg['talk_activity']=array('title'=>'plugin.cwtalk.commentwatcher_panel_title_talk_activity', 'menu_title'=>'plugin.cwtalk.commentwatcher_menu_title_talk_activity', 'order'=>500);
 }
 else
 {
     $wg['talk_direct']=array('title'=>'commentwatcher_panel_title_talk_direct', 'menu_title'=>'commentwatcher_menu_title_talk_direct', 'order'=>500);
-    $wg['talk_activity']=array('title'=>'commentwatcher_panel_title_talk_activity', 'menu_title'=>'commentwatcher_menu_title_talk_activity');
+    $wg['talk_activity']=array('title'=>'commentwatcher_panel_title_talk_activity', 'menu_title'=>'commentwatcher_menu_title_talk_activity', 'order'=>500);
 }
 
 
