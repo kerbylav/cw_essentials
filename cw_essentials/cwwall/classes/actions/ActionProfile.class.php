@@ -28,10 +28,10 @@ class PluginCWWall_ActionProfile extends PluginCWWall_Inherit_ActionProfile
             if ($aWall)
                 $aWall=$aWall->value;
                 //        pr($aWall);
+            $aDirect=array();
+            $aIndirect=array();
             if ($aWall and is_array($aWall) and count($aWall) > 0)
             {
-                $aDirect=array();
-                $aIndirect=array();
                 foreach ($aWall as $oWall)
                 {
                     if ($oWall->getAnswerDirect())
@@ -73,13 +73,13 @@ class PluginCWWall_ActionProfile extends PluginCWWall_Inherit_ActionProfile
             
             $sCWCurContainerType='lswall';
             $iCWCurContainerId=$this->oUserProfile->getId();
-
-            $aClear=array_merge($aDirect,$aIndirect);
             
-            $aActAnswer=$this->PluginCWCore_Watcher_GetDataItemsByOwnerIdAndContainerTypeAndContainerIdAndCommentTypeInAndCommentActiveAndNcommentIdIn($oUserCurrent->getId(), 'lswall', $this->oUserProfile->getId(), array('lswall_direct', 'lswall'), 1,$aClear);
+            $aClear=array_merge($aDirect, $aIndirect,array(0));
+            
+            $aActAnswer=$this->PluginCWCore_Watcher_GetDataItemsByOwnerIdAndContainerTypeAndContainerIdAndCommentTypeInAndCommentActiveAndNcommentIdIn($oUserCurrent->getId(), 'lswall', $this->oUserProfile->getId(), array('lswall_direct', 'lswall'), 1, $aClear);
             foreach ($aActAnswer as $oActAnswer)
                 $oActAnswer->delete();
-            $aActAnswer=$this->PluginCWCore_Watcher_GetDataItemsByOwnerIdAndContainerTypeAndContainerIdAndCommentTypeInAndCommentActiveAndNcommentedIdIn($oUserCurrent->getId(), 'lswall', $this->oUserProfile->getId(), array('lswall_direct', 'lswall'), 1,$aClear);
+            $aActAnswer=$this->PluginCWCore_Watcher_GetDataItemsByOwnerIdAndContainerTypeAndContainerIdAndCommentTypeInAndCommentActiveAndNcommentedIdIn($oUserCurrent->getId(), 'lswall', $this->oUserProfile->getId(), array('lswall_direct', 'lswall'), 1, $aClear);
             foreach ($aActAnswer as $oActAnswer)
                 $oActAnswer->delete();
         }
