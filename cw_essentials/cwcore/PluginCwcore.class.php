@@ -51,7 +51,7 @@ class PluginCWCore extends Plugin
         $aMods=$this->PluginCWCore_Watcher_getMods();
         if (count($aMods) > 0)
         {
-            $this->Message_AddErrorSingle($this->Lang_Get('commentwatcher_mods_still_active'), $this->Lang_Get('error'), true);
+            $this->Message_AddErrorSingle($this->Lang_Get('plugin.cwcore.commentwatcher_mods_still_active'), $this->Lang_Get('error'), true);
             return false;
         }
         
@@ -104,7 +104,7 @@ class PluginCWMod extends Plugin
         $sVer=$ss->Get('min_core_version');
         if (version_compare($sVer, (string) $aPlugins['cwcore']['property']->version, '>'))
         {
-            $this->Message_AddErrorSingle($this->Lang_Get('commentwatcher_need_cwcore') . $sVer, $this->Lang_Get('error'), true);
+            $this->Message_AddErrorSingle('Need cwcore plugin of version '. $sVer. ' or higher', $this->Lang_Get('error'), true);
             return false;
         }
         $this->addEnumType(Config::Get('db.table.watcher_data'), 'container_type', $this->sModType);
