@@ -24,6 +24,11 @@ class PluginCWCore_ActionProfile extends PluginCWCore_Inherit_ActionProfile
 
     protected function EventCommentwatcher()
     {
+        if (!$this->oUserCurrent)
+        {
+            return parent::EventNotFound();
+        }
+
         /**
 		 * Получаем логин из УРЛа
 		 */
@@ -36,8 +41,6 @@ class PluginCWCore_ActionProfile extends PluginCWCore_Inherit_ActionProfile
         {
             return parent::EventNotFound();
         }
-        
-        $this->oUserCurrent=$this->User_GetUserCurrent();
         
         if ($this->oUserProfile->getId() != $this->oUserCurrent->getId())
         {

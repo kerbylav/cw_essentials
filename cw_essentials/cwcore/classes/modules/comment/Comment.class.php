@@ -31,7 +31,7 @@ class PluginCWCore_ModuleComment extends PluginCWCore_Inherit_ModuleComment
         if ($res)
         {
             $aMods=$this->PluginCWCore_Watcher_GetMods();
-            $sClassName=$aMods[$oComment->getTargetType()];
+            $sClassName=isset($aMods[$oComment->getTargetType()])?$aMods[$oComment->getTargetType()]:NULL;
             if ($sClassName)
             {
                 $sFuncName=$sClassName . '_ModuleWorker_ProcessAddComment';

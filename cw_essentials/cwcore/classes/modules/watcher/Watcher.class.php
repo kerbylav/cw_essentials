@@ -98,15 +98,16 @@ class PluginCWCore_ModuleWatcher extends ModuleORM
         }
         foreach ($aGroups as $sGroupName => $aArray)
         {
-            if (is_array($aGroups[$sGroupName]['types']))
+            $aGroups[$sGroupName]['count']=0;
+            if (isset($aGroups[$sGroupName]['types']) && is_array($aGroups[$sGroupName]['types']))
                 $aGroups[$sGroupName]['types']=array_unique($aGroups[$sGroupName]['types']);
-            if (is_array($aGroups[$sGroupName]['activity']))
+            if (isset($aGroups[$sGroupName]['activity']) && is_array($aGroups[$sGroupName]['activity']))
                 $aGroups[$sGroupName]['activity']=array_unique($aGroups[$sGroupName]['activity']);
             if (version_compare(LS_VERSION, "0.5.1", '>') && ((substr($aGroups[$sGroupName]['title'], 0, 7) != 'plugin.')))
                 $aGroups[$sGroupName]['title']=$this->Lang_Get("plugin.cwcore." . $aGroups[$sGroupName]['title']);
             else
                 $aGroups[$sGroupName]['title']=$this->Lang_Get($aGroups[$sGroupName]['title']);
-            if (is_array($aArray['types']))
+            if (isset($aArray['types']) && is_array($aArray['types']))
             {
                 $aAnswer=$this->PluginCWCore_ModuleWatcher_GetDataItemsByOwnerIdAndCommentTypeInAndCommentActiveAndContainerTypeIn($oUserCurrent->getId(), $aArray['activity'], 1, $aArray['types'], array('#order'=>array('container_type', 'container_id', 'date_add')));
 
