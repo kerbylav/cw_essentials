@@ -92,7 +92,10 @@ ls.cw.core = (function($)
 			iCID = 0;
 
 		if (!bNotShowProcess)
+        {
 			$('#commentwatcher-panel').addClass('active');
+            $('#commentwatcher-toolbar').addClass('active');
+        }
 		ls.ajax(aRouter['commentwatcher'] + 'ajaxupdatepanel/',
 		{
 			'sContainerType' : sCT,
@@ -100,7 +103,10 @@ ls.cw.core = (function($)
 		}, function(result)
 		{
 			if (!bNotShowProcess)
+            {
 				$('#commentwatcher-panel').removeClass('active');
+                $('#commentwatcher-toolbar').removeClass('active');
+            }
 			if (!result)
 			{
 				ls.msg.error('Error', 'Please try again later');

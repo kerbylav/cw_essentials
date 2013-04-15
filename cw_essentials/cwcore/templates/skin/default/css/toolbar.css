@@ -1,0 +1,56 @@
+#commentwatcher-toolbar {
+}
+
+#commentwatcher-toolbar #commentwatcher-update-activity {
+    text-align:center;
+}
+
+#commentwatcher-toolbar #commentwatcher-activities a {
+    text-decoration: none;
+    display: block;
+    padding: 10px 0 0 0;
+}
+
+#commentwatcher-toolbar #commentwatcher-activities {
+    text-align: center;
+    padding: 0 0 10px 0;
+}
+
+#commentwatcher-toolbar .update-activity {
+    background: url("../images/cw-update-icon.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    text-align: center;
+}
+
+#commentwatcher-toolbar.active .update-activity {
+    background: url("../images/cw-update-icon-ani.gif") no-repeat;
+}
+
+#commentwatcher-toolbar a {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#commentwatcher-toolbar a.talk_direct {
+    color: navy;
+}
+
+#commentwatcher-toolbar a.direct {
+    color: red;
+}
+
+#commentwatcher-toolbar a.later {
+    color: green;
+
+}
+
+#commentwatcher-toolbar a.fav {
+    color: #FF8B00;
+
+}
+

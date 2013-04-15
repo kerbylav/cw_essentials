@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `prefix_commentwatcher_watcher_data` (
   KEY `fsearch` (`owner_id`,`container_type`,`comment_id`,`comment_type`,`comment_active`),
   KEY `prefix_commentwatcher_watcher_data_fk0` (`comment_id`),
   KEY `prefix_commentwatcher_watcher_data_fk2` (`replier_id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 ALTER TABLE `prefix_commentwatcher_watcher_data`
   ADD CONSTRAINT `prefix_commentwatcher_watcher_data_fk0` FOREIGN KEY (`comment_id`) REFERENCES `prefix_comment` (`comment_id`) ON DELETE CASCADE ON UPDATE CASCADE,

@@ -1,1 +1,0 @@
-{if !$oCWActionComment->getAnswerLater()}<li><a href="#" class="cw-action-reply-later" title="" onclick="ls.cw.core.toggleAnswer(this,{$oCWActionComment->getId()},'replylater'); return false;">{$aLang.commentwatcher_action_reply_later}</a></li>{/if}

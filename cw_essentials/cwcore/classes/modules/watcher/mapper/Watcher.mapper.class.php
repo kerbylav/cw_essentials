@@ -2,12 +2,12 @@
 /*-------------------------------------------------------
 *
 *   Comment Watcher. The Core.
-*   Copyright © 2012 Alexei Lukin
+*   Copyright © 2012-13 Alexei Lukin
 *
 *--------------------------------------------------------
 *
-*   Official site: imthinker.ru/commentwatcher
-*   Contact e-mail: kerbylav@gmail.com
+*   Official site: http://kerbystudio.ru
+*   Contact e-mail: kerby@kerbystudio.ru
 *
 ---------------------------------------------------------
 */
@@ -38,7 +38,29 @@ class PluginCWCore_ModuleWatcher_MapperWatcher extends MapperORM
         }
         return $aUsers;
     }
-    
+
+    public function GetUsersBySubscribe($sTargetId,$sTargetType)
+    {
+        $sql="
+              SELECT u.user_id user_id FROM " . Config::Get('db.table.subscribe') . " s inner join " . Config::Get('db.table.user') . " u on s.mail=u.user_mail
+              WHERE
+					target_id = ?
+				AND
+					status = 1
+				AND
+					target_type = ?
+        ";
+        $aUsers=array();
+        if ($aRows=$this->oDb->select($sql, $sTargetId, $sTargetType))
+        {
+            foreach ($aRows as $aRow)
+            {
+                $aUsers[]=$aRow['user_id'];
+            }
+        }
+        return $aUsers;
+    }
+
     public function GetGroupedData($iUserId,$aTypes,$aActType,&$iCount,$iPage,$iPerPage)
     {
         if (!is_array($aTypes)) $aTypes=array($aTypes);

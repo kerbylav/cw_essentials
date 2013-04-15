@@ -33,7 +33,7 @@
 #update .direct_comments_counter, #update .later_comments_counter {
 	border-top: 1px solid #ECECED;
 	color: red;
-	font-weight: bold;
+/*	font-weight: bold;*/
 	cursor: pointer;
 	margin-top: 3px;
 	padding-top: 7px;

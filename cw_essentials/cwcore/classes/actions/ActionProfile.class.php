@@ -2,12 +2,12 @@
 /*-------------------------------------------------------
 *
 *   Comment Watcher. The Core.
-*   Copyright © 2012 Alexei Lukin
+*   Copyright © 2012-13 Alexei Lukin
 *
 *--------------------------------------------------------
 *
-*   Official site: imthinker.ru/commentwatcher
-*   Contact e-mail: kerbylav@gmail.com
+*   Official site: http://kerbystudio.ru
+*   Contact e-mail: kerby@kerbystudio.ru
 *
 ---------------------------------------------------------
 */

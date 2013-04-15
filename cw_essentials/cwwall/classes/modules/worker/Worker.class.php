@@ -2,12 +2,12 @@
 /*-------------------------------------------------------
 *
 *   Comment Watcher. The wall.
-*   Copyright © 2012 Alexei Lukin
+*   Copyright © 2012-13 Alexei Lukin
 *
 *--------------------------------------------------------
 *
-*   Official site: imthinker.ru/commentwatcher
-*   Contact e-mail: kerbylav@gmail.com
+*   Official site: http://kerbystudio.ru
+*   Contact e-mail: kerby@kerbystudio.ru
 *
 ---------------------------------------------------------
 */
@@ -187,7 +187,8 @@ class PluginCWWall_ModuleWorker extends PluginCWCore_ModuleWorker
                 
                 return $oViewer->Fetch($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'pic.tpl'));
             }
-        }*/
+        }
+*/
     
     }
 

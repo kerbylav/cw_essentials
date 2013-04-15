@@ -2,12 +2,12 @@
 /*-------------------------------------------------------
 *
 *   Comment Watcher. The Core.
-*   Copyright © 2012 Alexei Lukin
+*   Copyright © 2012-13 Alexei Lukin
 *
 *--------------------------------------------------------
 *
-*   Official site: imthinker.ru/commentwatcher
-*   Contact e-mail: kerbylav@gmail.com
+*   Official site: http://kerbystudio.ru
+*   Contact e-mail: kerby@kerbystudio.ru
 *
 ---------------------------------------------------------
 */
@@ -23,7 +23,7 @@ if (!class_exists('Plugin'))
 class PluginCWCore extends Plugin
 {
 
-    protected $aInherits=array('module'=>array('ModuleComment', 'ModuleViewer'),'action'=>array('ActionProfile'));
+    protected $aInherits=array('module'=>array('ModuleComment', 'ModuleViewer', 'ModuleSubscribe'),'action'=>array('ActionProfile'));
 
 
     /**
@@ -64,6 +64,7 @@ class PluginCWCore extends Plugin
     public function Init()
     {
         $this->Viewer_AppendStyle($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'css/panel.css'));
+        $this->Viewer_AppendStyle($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'css/toolbar.css'));
         $this->Viewer_AppendStyle($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'css/add.css'));
         $this->Viewer_AppendScript($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'js/hook.js'));
         $this->Viewer_AppendScript($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'js/core.js'));

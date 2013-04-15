@@ -2,12 +2,12 @@
 /*-------------------------------------------------------
 *
 *   Comment Watcher
-*   Copyright © 2012 Alexei Lukin
+*   Copyright © 2012-13 Alexei Lukin
 *
 *--------------------------------------------------------
 *
-*   Official site: imthinker.ru/commentwatcher
-*   Contact e-mail: kerbylav@gmail.com
+*   Official site: http://kerbystudio.ru
+*   Contact e-mail: kerby@kerbystudio.ru
 *
 ---------------------------------------------------------
 */
@@ -19,6 +19,9 @@ $config['min_core_version']='1.0.1';
 
 // Тип контейнеров комментов
 $config['mod_type']='talk';
+
+// Следить ли за новыми .
+$config['use_favorities']=true;
 
 // Создаем свои группы слежения
 $wg=Config::Get('plugin.cwcore.watch_groups');

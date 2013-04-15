@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `prefix_commentwatcher_watcher_wall_watch` (
   KEY `wall_id` (`wall_id`),
   KEY `uw` (`wall_id`,`user_id`),
   KEY `prefix_commentwatcher_watcher_wall_watch_fk0` (`user_id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `prefix_commentwatcher_watcher_wall_watch`
   ADD CONSTRAINT `prefix_commentwatcher_watcher_wall_watch_fk0` FOREIGN KEY (`user_id`) REFERENCES `prefix_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,

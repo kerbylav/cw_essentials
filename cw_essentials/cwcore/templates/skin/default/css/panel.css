@@ -1,15 +1,15 @@
 #commentwatcher-panel {
-	background: none repeat scroll 0 0 #FAFBFB;
-        border-left: 1px solid #DDDDDD;
-        border-radius: 10px 0 0 10px;
-        border-top: 1px solid #EEEEEE;
-	float: right;
-	padding: 10px 10px 15px;
-	position: fixed;
-	right: 0px;
-	text-align: center;
-	bottom: -10px;
-	z-index: 1;
+    background: none repeat scroll 0 0 #FAFBFB;
+    border-left: 1px solid #DDDDDD;
+    border-radius: 10px 0 0 10px;
+    border-top: 1px solid #EEEEEE;
+    float: right;
+    padding: 10px 10px 15px;
+    position: fixed;
+    right: 0px;
+    text-align: center;
+    bottom: -10px;
+    z-index: 1;
 }
 
 #commentwatcher-panel.right {
@@ -19,20 +19,20 @@
 }
 
 #commentwatcher-panel.top {
-	top: -10px;
-	padding-top: 20px;
-	padding-bottom: 8px;
-	border-bottom: 1px solid #DDDDDD;
-	bottom: auto;
+    top: -10px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #DDDDDD;
+    bottom: auto;
 }
 
 #commentwatcher-panel.left {
-border-left: medium none;
-border-radius: 0 10px 10px 0;
-border-right: 1px solid #DDDDDD;
-left: 0;
-padding-left: 8px;
-right: auto;
+    border-left: medium none;
+    border-radius: 0 10px 10px 0;
+    border-right: 1px solid #DDDDDD;
+    left: 0;
+    padding-left: 8px;
+    right: auto;
 }
 
 #commentwatcher-update-activity {
@@ -48,10 +48,10 @@ right: auto;
 #commentwatcher-panel.horizontal li {
     border-left: 1px solid #ECECED;
     border-top: none;
-cursor: pointer;
-float: left;
-margin: 0 0 0 3px;
-padding: 0 4px 0 7px;
+    cursor: pointer;
+    float: left;
+    margin: 0 0 0 3px;
+    padding: 0 4px 0 7px;
 }
 
 #commentwatcher-panel.horizontal #commentwatcher-update-activity, #commentwatcher-panel.horizontal #commentwatcher-activities {
@@ -59,51 +59,45 @@ padding: 0 4px 0 7px;
 }
 
 #commentwatcher-panel .update-activity {
-	background: url("../images/cw-update-icon.png") no-repeat scroll 0 0
-		transparent;
-	cursor: pointer;
-	height: 16px;
-	width: 16px;
-	display:inline-block;
-	text-align: center;
+    background: url("../images/cw-update-icon.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    text-align: center;
 }
 
 #commentwatcher-panel.active .update-activity {
-	background: url("../images/cw-update-icon-ani.gif") no-repeat;
+    background: url("../images/cw-update-icon-ani.gif") no-repeat;
 }
 
 #commentwatcher-panel li {
-	border-top: 1px solid #ECECED;
-	cursor: pointer;
-	margin-top: 3px;
-	padding-top: 7px;
+    border-top: 1px solid #ECECED;
+    cursor: pointer;
+    margin-top: 3px;
+    padding-top: 7px;
 }
 
-#commentwatcher-panel li a
-{
-	font-weight: bold;
-	text-decoration: none;
+#commentwatcher-panel li a {
+    font-weight: bold;
+    text-decoration: none;
 }
 
-#commentwatcher-panel li.talk_direct a
-{
-	color: navy;
+#commentwatcher-panel li.talk_direct a {
+    color: navy;
 }
 
-#commentwatcher-panel li.direct a
-{
-	color: red;
+#commentwatcher-panel li.direct a {
+    color: red;
 }
 
-#commentwatcher-panel li.later a
-{
-	color: green;
-	
+#commentwatcher-panel li.later a {
+    color: green;
+
 }
 
-#commentwatcher-panel li.fav a
-{
-	color: #FF8B00;
-	
+#commentwatcher-panel li.fav a {
+    color: #FF8B00;
+
 }
 
