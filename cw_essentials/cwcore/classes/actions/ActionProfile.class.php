@@ -48,10 +48,7 @@ class PluginCWCore_ActionProfile extends PluginCWCore_Inherit_ActionProfile
         }
         $iPage=$this->GetParamEventMatch(2, 2)?$this->GetParamEventMatch(2, 2):1;
         
-        if (version_compare(LS_VERSION, "0.5.1", '>'))
-            $this->Viewer_AddHtmlTitle($this->Lang_Get('plugin.cwcore.commentwatcher_menu_main'));
-        else
-            $this->Viewer_AddHtmlTitle($this->Lang_Get('commentwatcher_menu_main'));
+        $this->Viewer_AddHtmlTitle($this->Lang_Get('plugin.cwcore.commentwatcher_menu_main'));
         
         $sGroupName=Router::GetParam(1);
         $aGroups=Config::Get('plugin.cwcore.watch_groups');
@@ -118,15 +115,12 @@ class PluginCWCore_ActionProfile extends PluginCWCore_Inherit_ActionProfile
         $this->Viewer_Assign('aData', $aData);
         $this->Viewer_Assign('sData', $res);
         
-        if (version_compare(LS_VERSION, "0.5.1", '>') && ((substr($aGroups[$sGroupName]['title'], 0, 7) != 'plugin.')))
+        if (((substr($aGroups[$sGroupName]['title'], 0, 7) != 'plugin.')))
             $this->Viewer_AddHtmlTitle($this->Lang_Get("plugin.cwcore." . $aGroups[$sGroupName]['title']));
         else
             $this->Viewer_AddHtmlTitle($this->Lang_Get($aGroups[$sGroupName]['title']));
         
-        if (version_compare(LS_VERSION, "0.5.1", '>'))
-            $this->SetTemplate($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'actions/ActionProfile/topics_v10.tpl'));
-        else
-            $this->SetTemplate($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'actions/ActionProfile/topics.tpl'));
+        $this->SetTemplate($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'actions/ActionProfile/topics.tpl'));
     }
 
     public function EventShutdown()
@@ -147,7 +141,6 @@ class PluginCWCore_ActionProfile extends PluginCWCore_Inherit_ActionProfile
         $this->Viewer_Assign('oUserCurrent', $this->oUserCurrent);
         $this->Viewer_Assign('iCountTopicUser', $iCountTopicUser);
         $this->Viewer_Assign('iCountCommentUser', $iCountCommentUser);
-        $this->Viewer_Assign('vLS10', version_compare(LS_VERSION, "0.5.1", '>'));
     }
 }
 ?>

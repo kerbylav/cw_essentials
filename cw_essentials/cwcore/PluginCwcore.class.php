@@ -66,7 +66,6 @@ class PluginCWCore extends Plugin
         $this->Viewer_AppendStyle($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'css/panel.css'));
         $this->Viewer_AppendStyle($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'css/toolbar.css'));
         $this->Viewer_AppendStyle($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'css/add.css'));
-        $this->Viewer_AppendScript($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'js/hook.js'));
         $this->Viewer_AppendScript($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__,'js/core.js'));
     }
 }

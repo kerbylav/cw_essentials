@@ -149,15 +149,12 @@ class PluginCWCore_ActionCW extends Action
         $this->Viewer_Assign('aData', $aData);
         $this->Viewer_Assign('sData', $res);
         
-        if (version_compare(LS_VERSION, "0.5.1", '>') && ((substr($aGroups[$sGroupName]['title'], 0, 7) != 'plugin.')))
+        if (((substr($aGroups[$sGroupName]['title'], 0, 7) != 'plugin.')))
             $this->Viewer_AddHtmlTitle($this->Lang_Get("plugin.cwcore." . $aGroups[$sGroupName]['title']));
         else
             $this->Viewer_AddHtmlTitle($this->Lang_Get($aGroups[$sGroupName]['title']));
         
-        if (version_compare(LS_VERSION, "0.5.1", '>'))
-            $this->SetTemplate($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'actions/ActionProfile/topics_v10.tpl'));
-        else
-            $this->SetTemplate($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'actions/ActionProfile/topics.tpl'));
+        $this->SetTemplate($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'actions/ActionProfile/topics.tpl'));
     }
 
     protected function EventWontReply()
@@ -237,7 +234,7 @@ class PluginCWCore_ActionCW extends Action
                     foreach ($aFavAnswer as $oFavAnswer)
                         $oFavAnswer->delete();
                         
-                        // Прямой ответ на коммент пользователю, или новый коммент в топике пользователя
+                    // Прямой ответ на коммент пользователю, или новый коммент в топике пользователя
                     $oAnswer=Engine::GetEntity('PluginCWCore_ModuleWatcher_EntityData');
                     $oAnswer->setCommentId($oComment->getId());
                     $oAnswer->setContainerType($oComment->getTargetType());
@@ -268,7 +265,6 @@ class PluginCWCore_ActionCW extends Action
         {
             $sCWCurContainerType=getRequest('sContainerType');
             $iCWCurContainerId=getRequest('iContainerId');
-            $this->Viewer_Assign('vLS10', version_compare(LS_VERSION, "0.5.1", '>'));
             $this->Viewer_AssignAjax('sCWPanelContent', $this->PluginCWCore_Watcher_GetPanelContent());
         }
     }
@@ -292,7 +288,6 @@ class PluginCWCore_ActionCW extends Action
         $this->Viewer_Assign('oUserProfile', $this->oUserProfile);
         $this->Viewer_Assign('iCountTopicUser', $iCountTopicUser);
         $this->Viewer_Assign('iCountCommentUser', $iCountCommentUser);
-        $this->Viewer_Assign('vLS10', version_compare(LS_VERSION, "0.5.1", '>'));
     }
 }
 ?>

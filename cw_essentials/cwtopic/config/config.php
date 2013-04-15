@@ -15,7 +15,7 @@
 $config=array();
 
 // Минимальная версия ядра слежения
-$config['min_core_version']='1.0.1';
+$config['min_core_version']='2.0.0';
 
 // Тип контейнеров комментов
 $config['mod_type']='topic';

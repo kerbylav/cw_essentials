@@ -1,5 +1,8 @@
-{include file='header.tpl' menu="profile"}
+{assign var="sidebarPosition" value='left'}
+{include file='header.tpl'}
 
+{include file='actions/ActionProfile/profile_top.tpl'}
+{hook run='prepare_menu_watcher'}
 {if (count($aData.result)>0)}
 {$sData}
 {else}

@@ -17,10 +17,10 @@
  * Русский языковой файл для плагина "Слежение за комментами: личка" 
  */
 return array(
-'commentwatcher_panel_title_talk_direct'=>'Сообщения в личной почте',
-'commentwatcher_panel_title_talk_activity'=>'Активность в личной почте',
+'panel_title_talk_direct'=>'Сообщения в личной почте',
+'panel_title_talk_activity'=>'Активность в личной почте',
 
-'commentwatcher_menu_title_talk_direct'=>'Ответы в личке',
-'commentwatcher_menu_title_talk_activity'=>'В личке',
+'menu_title_talk_direct'=>'Ответы в личке',
+'menu_title_talk_activity'=>'В личке',
 );
 ?>

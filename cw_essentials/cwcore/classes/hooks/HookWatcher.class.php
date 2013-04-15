@@ -29,7 +29,7 @@ class PluginCWCore_HookWatcher extends Hook
         $this->AddHook('template_body_begin', 'DoSetPanel');
         $this->AddHook('template_menu_profile', 'IncludeMenuProfile');
         $this->AddHook('template_profile_sidebar_menu_item_last', 'IncludeMenuProfile');
-        $this->AddHook('template_prepare_menu_watcher_v10', 'PrepareMenuWatcher');
+        $this->AddHook('template_prepare_menu_watcher', 'PrepareMenuWatcher');
         if (Config::Get('plugin.cwcore.template_actions'))
         {
             if (Config::Get('plugin.cwcore.separate_template_actions'))
@@ -48,7 +48,6 @@ class PluginCWCore_HookWatcher extends Hook
     {
         $this->Viewer_Assign('oCWActionComment', $aParams['comment']);
         $this->Viewer_Assign('oConfig', Config::GetInstance());
-        $this->Viewer_Assign('vLS10', version_compare(LS_VERSION, "0.5.1", '>'));
         $res = $this->Viewer_Fetch($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'action_wont_reply.tpl'));
         $res .= $this->Viewer_Fetch($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'action_reply_later.tpl'));
         return $res;
@@ -58,7 +57,6 @@ class PluginCWCore_HookWatcher extends Hook
     {
         $this->Viewer_Assign('oConfig', Config::GetInstance());
         $this->Viewer_Assign('oCWActionComment', $aParams['comment']);
-        $this->Viewer_Assign('vLS10', version_compare(LS_VERSION, "0.5.1", '>'));
         return $this->Viewer_Fetch($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'action_reply_later.tpl'));
     }
 
@@ -66,7 +64,6 @@ class PluginCWCore_HookWatcher extends Hook
     {
         $this->Viewer_Assign('oConfig', Config::GetInstance());
         $this->Viewer_Assign('oCWActionComment', $aParams['comment']);
-        $this->Viewer_Assign('vLS10', version_compare(LS_VERSION, "0.5.1", '>'));
         return $this->Viewer_Fetch($this->PluginCWCore_Watcher_GetTemplateFilePath(__CLASS__, 'action_wont_reply.tpl'));
     }
 
@@ -123,17 +120,8 @@ class PluginCWCore_HookWatcher extends Hook
         if (!$iCWCurContainerId)
             $iCWCurContainerId = 0;
 
-        if (version_compare(LS_VERSION, "0.5.1", '>'))
-        {
-            $awr = $this->Lang_Get("plugin.cwcore.commentwatcher_action_wont_reply");
-            $arl = $this->Lang_Get("plugin.cwcore.commentwatcher_action_reply_later");
-        }
-        else
-        {
-            $awr = $this->Lang_Get("commentwatcher_action_wont_reply");
-            $arl = $this->Lang_Get("commentwatcher_action_reply_later");
-        }
-        $ls10 = version_compare(LS_VERSION, "0.5.1", '>') ? 1 : 0;
+        $awr = $this->Lang_Get("plugin.cwcore.action_wont_reply");
+        $arl = $this->Lang_Get("plugin.cwcore.action_reply_later");
         $res .= "
                 <script type='text/javascript'>
                     if (typeof(ls.cw.core)!='undefined')
@@ -144,7 +132,6 @@ class PluginCWCore_HookWatcher extends Hook
                         ls.cw.core.options.autoupdate_period=" . Config::Get('plugin.cwcore.autoupdate_period') . ";
                         ls.cw.core.options.no_wont_reply=" . (Config::Get('plugin.cwcore.no_wont_reply') ? 1 : 0) . ";
                         iUserCurrent={$oUserCurrent->getId()}; sContainerType='{$sCWCurContainerType}'; iContainerId={$iCWCurContainerId};
-			iCWLS10=" . $ls10 . ";
                     }
                 </script>
             <link rel='stylesheet' type='text/css' href='" . $this->PluginCWCore_Watcher_GetTemplateFileWebPath(__CLASS__, 'css/comments.css') . '?' . $rnd . "' />
@@ -224,7 +211,7 @@ class PluginCWCore_HookWatcher extends Hook
             $aData = $this->PluginCWCore_Watcher_GetGroupedData($oUserProfile->getId(), $aGroups[$sGroupName]['types'], $aGroups[$sGroupName]['activity'], 1, 1);
             $aGroup['count'] = $aData['count'];
             $iGCount += $aData['count'];
-            if (version_compare(LS_VERSION, "0.5.1", '>') && ((substr($aGroups[$sGroupName]['title'], 0, 7) != 'plugin.')))
+            if (((substr($aGroups[$sGroupName]['title'], 0, 7) != 'plugin.')))
                 $aGroup['menu_title'] = $this->Lang_Get("plugin.cwcore." . $aGroup['menu_title']);
             else
                 $aGroup['menu_title'] = $this->Lang_Get($aGroup['menu_title']);
@@ -233,7 +220,6 @@ class PluginCWCore_HookWatcher extends Hook
         }
         $this->Viewer_Assign('aActivityTotalCount', $iGCount);
         $this->Viewer_Assign('aCWMenuData', $aGroups);
-        $this->Viewer_Assign('vLS10', version_compare(LS_VERSION, "0.5.1", '>'));
         Engine::GetInstance()->Viewer_Assign('aCWMenuData', $aGroups);
     }
 

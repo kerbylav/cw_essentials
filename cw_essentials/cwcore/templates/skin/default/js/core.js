@@ -428,9 +428,6 @@ ls.cw.core = (function($)
 		{
 			var ssel='a';
 			
-			if (!iCWLS10)
-				ssel='div';
-			
 			var nc = updateDiv.find(ssel+'#' + this.options.ids.new_comments_counter);
 			if (nc.length)
 			{
